@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 16px;
+      background: #eee;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      background: #ff3c3c;
+      color: white;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .slider-wrapper {
+      position: relative;
+    }
+
+    .movie-carousel {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+      scrollbar-width: none; /* hide scrollbar Firefox */
+    }
+
+    .movie-carousel::-webkit-scrollbar {
+      display: none; /* hide scrollbar Chrome */
+    }
+
+    .movie-card {
+      min-width: 150px;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .movie-card p {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .book-button {
+      margin-top: 8px;
+      background: #ff3c3c;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Navigation buttons */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .nav-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .prev {
+      left: -25px;
+    }
+
+    .next {
+      right: -25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" placeholder="Search for Movies, Events, Sports" class="search-box" />
+
+    <div class="tabs">
+      <div class="tab active">Movies</div>
+      <div class="tab">Events</div>
+      <div class="tab">Sports</div>
+      <div class="tab">Plays</div>
+    </div>
+
+    <h2>Movies in Mangalore</h2>
+    <div class="slider-wrapper">
+      <button class="nav-btn prev" onclick="slide(-1)">&#10094;</button>
+      <div class="movie-carousel" id="movieSlider">
+        
+        <!-- Existing movies -->
+        <div class="movie-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" alt="Avengers Endgame">
+          <p>Avengers Endgame</p>
+          <span class="rating">8.4</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/spider-man-no-way-home-pictures-l3ztimmzaeeqfgir.jpg" alt="Spider-Man No Way Home">
+          <p>Spider-Man</p>
+          <span class="rating">8.1</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/radhe shyam.jpg" alt="Radhe Shyam">
+          <p>Radhe Shyam</p>
+          <span class="rating">7.2</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/M/MV5BYTM2ZDMzMDAtMjhlNS00YmVmLWJkYWEtMTczNTMwMjhiZjExXkEyXkFqcGc@._V1_QL75_UX164_.jpg" alt="Su from So">
+          <p>Su from So</p>
+          <span class="rating">8.5</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/the-kashmir-files.jpg" alt="The Kashmir Files">
+          <p>The Kashmir Files</p>
+          <span class="rating">8.3</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/777 charlie.jpg" alt="777 Charlie">
+          <p>777 Charlie</p>
+          <span class="rating">8.7</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/topgun.jpeg" alt="Top Gun: Maverick">
+          <p>Top Gun: Maverick</p>
+          <span class="rating">8.4</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/batman.jpeg" alt="The Batman">
+          <p>The Batman</p>
+          <span class="rating">7.9</span>
+          <button class="book-button">Book</button>
+        </div>
+
+        <div class="movie-card">
+          <img src="Images/ManjummelBoys.jpg" alt="Manjummel Boys">
+          <p>Manjummel Boys</p>
+          <span class="rating">--</span>
+          <button class="book-button">Book</button>
+        </div>
+
+      </div>
+      <button class="nav-btn next" onclick="slide(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('movieSlider');
+    
+    function slide(direction) {
+      const cardWidth = 180; // width of each movie card + gap
+      slider.scrollBy({
+        left: direction * cardWidth * 3, // scroll by 3 cards at a time
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
