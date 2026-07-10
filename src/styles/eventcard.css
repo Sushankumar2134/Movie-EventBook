@@ -1,0 +1,73 @@
+.event-card {
+	min-width: 180px;
+	max-width: 180px;
+	flex: 0 0 180px;
+
+	background: white;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.event-carousel {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 15px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+	padding-bottom: 10px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	width: 100%;
+}
+
+.event-carousel::-webkit-scrollbar {
+	display: none;
+}
+
+.event-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.event-card p {
+	margin: 8px 0 2px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.rating {
+	font-size: 14px;
+	color: #777;
+}
+
+.book-button {
+	margin-top: 6px;
+	background: #ff3c3c;
+	color: white;
+	padding: 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.short-desc {
+	display: block !important;
+	font-size: 13px;
+	color: #444;
+	line-height: 1.4;
+	margin: 6px 0 10px 0;
+	text-align: left;
+	height: 56px;
+	overflow: hidden;
+}
+

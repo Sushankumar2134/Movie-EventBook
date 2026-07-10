@@ -1,0 +1,41 @@
+ .profile-section {
+	display: none;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.profile-header img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #ff3c3c;
+}
+
+.profile-details h3 {
+	margin: 0;
+}
+
+.profile-details p {
+	margin: 5px 0;
+	color: #666;
+}
+
+.booking-history h4 {
+	margin-bottom: 10px;
+}
+
+.booking-item {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
